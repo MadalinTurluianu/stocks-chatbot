@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  border-top: 1px solid var(--color-tertiary);
+  border-bottom: 1px solid var(--color-tertiary);
+  background-color: var(--background-tertiary);
+}
+
+.input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.button {
+  padding: 0.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+
+  &:disabled {
+    color: var(--color-tertiary);
+  }
+}

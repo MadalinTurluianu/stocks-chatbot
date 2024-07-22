@@ -5,6 +5,8 @@ import { MessagesList } from "../MessagesList";
 import { UserMessage } from "../UserMessage";
 import { BotMessage } from "../BotMessage";
 import { useBot } from "@/hooks/useBot";
+import { VscRobot } from "react-icons/vsc";
+import styles from "./styles.module.css";
 
 export function Chat() {
   const { initialOptions, ask } = useBot();
@@ -43,9 +45,17 @@ export function Chat() {
   );
 
   return (
-    <div>
-      <MessagesList messages={messages} />
-      <Input placeholder="Please pick an option." onSubmit={sendMessage} />
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <VscRobot size={25} />
+        <span>LSEG chatbot</span>
+      </header>
+      <main className={styles.chat}>
+        <MessagesList messages={messages} />
+      </main>
+      <footer className={styles.input}>
+        <Input placeholder="Please pick an option." onSubmit={sendMessage} />
+      </footer>
     </div>
   );
 }

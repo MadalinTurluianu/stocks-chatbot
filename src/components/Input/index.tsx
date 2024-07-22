@@ -1,4 +1,6 @@
 import { useCallback, useState } from "react";
+import { IoMdSend } from "react-icons/io";
+import styles from "./styles.module.css";
 
 type InputProps = {
   placeholder: string;
@@ -25,9 +27,20 @@ export function Input({ placeholder, onSubmit }: InputProps) {
   );
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input placeholder={placeholder} value={value} onChange={handleChange} />
-      <button type="submit">Send</button>
+    <form onSubmit={handleSubmit} className={styles.container}>
+      <input
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+        className={styles.input}
+      />
+      <button
+        type="submit"
+        className={styles.button}
+        disabled={value.trim() === ""}
+      >
+        <IoMdSend />
+      </button>
     </form>
   );
 }

@@ -1,0 +1,12 @@
+.list {
+  all: unset;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: flex-start;
+}
+
+.user {
+  align-self: flex-end;
+}

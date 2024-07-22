@@ -1,0 +1,33 @@
+:root {
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-tertiary: #cfcfcf;
+  --background-primary: #ffffff;
+  --background-secondary: #011efe;
+  --background-tertiary: #eeeeee;
+}
+
+@font-face {
+  font-family: roboto-regular;
+  src: url("./assets/fonts/roboto/Roboto-Regular.ttf");
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: rgb(245, 253, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  font-family: roboto-regular, sans-serif;
+}
