@@ -39,7 +39,7 @@ export function Input({ placeholder, onSubmit }: InputProps) {
         className={styles.button}
         disabled={value.trim() === ""}
       >
-        <IoMdSend />
+        <IoMdSend size={20}/>
       </button>
     </form>
   );
