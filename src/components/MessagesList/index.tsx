@@ -17,7 +17,7 @@ export function MessagesList({ messages }: MessagesListProps) {
   return (
     <ul className={styles.list} ref={list}>
       {messages?.map((item) => (
-        <li key={item.key} className={item.mine ? styles.user : ""}>
+        <li key={item.key} className={item.user ? styles.user : ""}>
           {item.element}
         </li>
       ))}

@@ -5,6 +5,12 @@
   flex-direction: column;
   list-style-type: none;
   align-items: flex-start;
+  gap: 1rem;
+  max-width: 100%;
+
+  li {
+    max-width: 85%;
+  }
 }
 
 .user {

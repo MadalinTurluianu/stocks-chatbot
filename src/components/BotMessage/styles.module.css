@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  color: var(--accent);
+  gap: 0.3rem;
+  max-width: 100%;
+
+  svg {
+    min-width: 1rem;
+  }
+}
+
+.message {
+  background-color: var(--background-secondary);
+  color: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: 10px 10px 10px 0;
+  span {
+    display: block;
+    text-align: start;
+    padding: 0.5rem;
+    word-break: break-all;
+    white-space: wrap;
+  }
+
+  ul {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  li {
+    all: unset;
+    background-color: var(--background-primary);
+    padding: 0.3rem;
+    font-size: 0.9rem;
+  }
+}

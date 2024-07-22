@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { MouseEventHandler, useCallback, useState } from "react";
 import { Message } from "@/types/message";
 import { Input } from "../Input";
 import { MessagesList } from "../MessagesList";
@@ -31,7 +31,7 @@ export function Chat() {
         {
           key: Date.now().toString() + "user",
           element: <UserMessage message={message} />,
-          mine: true,
+          user: true,
         },
         {
           key: Date.now().toString() + "bot",
@@ -44,13 +44,22 @@ export function Chat() {
     [ask]
   );
 
+  const suggestionClickHandler = useCallback<MouseEventHandler<HTMLElement>>(
+    (event) => {
+      const target = event.target as HTMLLIElement;
+      if (!target.dataset.suggestion || target.textContent == null) return;
+      sendMessage(target.textContent);
+    },
+    [sendMessage]
+  );
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <VscRobot size={25} />
         <span>LSEG chatbot</span>
       </header>
-      <main className={styles.chat}>
+      <main className={styles.chat} onClick={suggestionClickHandler}>
         <MessagesList messages={messages} />
       </main>
       <footer className={styles.input}>
