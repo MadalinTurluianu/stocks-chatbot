@@ -1,5 +1,8 @@
+@use  '../../main.scss' as *;
+
+
 .container {
-  display: flex;
+  @include flex;
   align-items: flex-end;
   color: var(--accent);
   gap: 0.3rem;
@@ -25,7 +28,7 @@
 
   ul {
     all: unset;
-    display: flex;
+    @include flex;
     flex-direction: column;
     gap: 0.2rem;
   }

@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Chat Bot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Run project
 
-Currently, two official plugins are available:
+- Make sure to have git installed on your machine and run `git clone "https://github.com/MadalinTurluianu/stocks-chatbot.git"`.<br>
+  Optionally you can download the zip folder.
+- Make sure to have node.js installed. Navigate into the project folder and run `npm i`.
+- Run `npm start`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Visit page from any device
 
-## Expanding the ESLint configuration
+- Just visit `https://madalinturluianu.github.io/stocks-chatbot/` from any device and play with the app.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## App walk through
+- You can type in the input one of the options provided by the bot. The verification is not case sensitive, but you have to answer in the form in which the options are written.
+- You can also click/tap on an option and it will automatically send the message for you.
+- If your answer is not correct the bot will ask you to try again. You will remain in the same step you were before.
+- If you are not in main menu you will always have the possibility to ga back to main menu.
+- If you selected a stock, you will also have the possibility to go back and select another stock from the same stock exchange.

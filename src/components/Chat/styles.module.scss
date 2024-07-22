@@ -1,5 +1,7 @@
+@use "../../main.scss" as *;
+
 .container {
-  display: flex;
+  @include flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
@@ -11,7 +13,7 @@
 .header {
   background-color: var(--accent);
   padding: 0.7rem 0.5rem;
-  display: flex;
+  @include flex;
   align-items: center;
   color: var(--color-secondary);
   gap: 0.5rem;
@@ -19,7 +21,7 @@
 
 .chat {
   flex-grow: 1;
-  display: flex;
+  @include flex;
   flex-direction: column;
   padding: 0.5rem;
   overflow-y: auto;
@@ -27,7 +29,7 @@
 }
 
 .input {
-  display: flex;
+  @include flex;
   flex-direction: column;
   align-items: stretch;
 }

@@ -13,6 +13,7 @@ type Answer = {
 const noResultText = "Please select a valid option.";
 const selectStockExchangeText = "Please select a Stock Exchange.";
 const selectStockText = "Please select a Stock.";
+const welcomeText = "Hello! Welcome to LSEG. I'm here to help you.";
 
 const stocksData: StockExchange[] = stocksDataJSON;
 
@@ -131,12 +132,27 @@ export function useBot() {
     [stock, stockExchange]
   );
 
+  getAvailableAnswers({
+    stocksData,
+    stock: null,
+    stockExchange: null,
+  });
+
   return {
     ask,
-    initialOptions: getAvailableAnswers({
-      stocksData,
-      stock: null,
-      stockExchange: null,
-    }),
+    initialMessages: [
+      {
+        text: welcomeText,
+        options: [],
+      },
+      {
+        text: selectStockExchangeText,
+        options: getAvailableAnswers({
+          stocksData,
+          stock: null,
+          stockExchange: null,
+        }),
+      },
+    ] satisfies Answer[],
   };
 }

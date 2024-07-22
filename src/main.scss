@@ -1,3 +1,11 @@
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 :root {
   --color-primary: #000000;
   --color-secondary: #ffffff;
@@ -24,9 +32,9 @@ body,
 
 #root {
   background-color: rgb(245, 253, 255);
-  display: flex;
   align-items: center;
   justify-content: center;
+  @include flex;
 }
 
 * {

@@ -1,3 +1,5 @@
+@use "../../main.scss" as *;
+
 .message {
   background-color: var(--background-tertiary);
   color: var(--color-primary);

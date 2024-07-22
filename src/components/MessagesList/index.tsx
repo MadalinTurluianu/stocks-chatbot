@@ -1,5 +1,5 @@
 import { Message } from "@/types/message";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import { useEffect, useRef } from "react";
 
 type MessagesListProps = {

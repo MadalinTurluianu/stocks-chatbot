@@ -1,7 +1,9 @@
+@use "../../main.scss" as *;
+
 .list {
   all: unset;
   overflow-y: auto;
-  display: flex;
+  @include flex;
   flex-direction: column;
   list-style-type: none;
   align-items: flex-start;

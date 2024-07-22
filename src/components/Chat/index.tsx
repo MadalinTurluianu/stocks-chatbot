@@ -6,21 +6,17 @@ import { UserMessage } from "../UserMessage";
 import { BotMessage } from "../BotMessage";
 import { useBot } from "@/hooks/useBot";
 import { VscRobot } from "react-icons/vsc";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 export function Chat() {
-  const { initialOptions, ask } = useBot();
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      key: Date.now().toString() + "bot",
-      element: (
-        <BotMessage
-          message="Hello! Welcome to LSEG. I'm here to help you."
-          options={initialOptions}
-        />
-      ),
-    },
-  ]);
+  const { initialMessages, ask } = useBot();
+  const [messages, setMessages] = useState<Message[]>(
+    initialMessages.map(({ text, options }, index) => ({
+      key: index + "bot",
+      element: <BotMessage message={text} options={options} />,
+      user: false,
+    }))
+  );
 
   const sendMessage = useCallback(
     (message: string) => {
@@ -29,12 +25,12 @@ export function Chat() {
       setMessages((prevMessages) => [
         ...prevMessages,
         {
-          key: Date.now().toString() + "user",
+          key: "user",
           element: <UserMessage message={message} />,
           user: true,
         },
         {
-          key: Date.now().toString() + "bot",
+          key: "bot",
           element: (
             <BotMessage message={botAnswer.text} options={botAnswer.options} />
           ),
